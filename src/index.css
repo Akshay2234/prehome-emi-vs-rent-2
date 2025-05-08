@@ -1,0 +1,56 @@
+
+    .css-1yuhvjn{
+        margin: -10px !important;
+    }
+    .MuiBox-root{
+      padding: 0px ;
+    }
+
+    .css-alnuhg-MuiTypography-root,.css-1534noa-MuiTypography-root,.css-1rs44lj-MuiTypography-root,.css-1pwy8n0-MuiTypography-root,.MuiTypography-root{
+      font-family: "Poppins" !important
+
+    }
+
+    body {
+        font-family: 'Poppins', sans-serif !important;
+        margin: 0;
+        /* padding: 0; */
+      }
+      
+      h1, h2, h3, h4, h5, h6 {
+        font-weight: 700; /* Bold */
+        font-family: 'Poppins', sans-serif !important;
+      }
+      
+      strong {
+        font-weight: 600; /* Semi-Bold */
+        font-family: 'Poppins', sans-serif !important;
+      }
+      
+      p {
+        font-weight: 400; /* Regular */
+        font-family: 'Poppins', sans-serif !important;
+      }
+
+      
+.css-51x56s{
+  z-index: 1000 !important;
+}
+
+.EventCardMobile{
+  overflow-x:scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  overflow-x: hidden; /* hide horizontal scrollbar */
+  overflow-y: scroll; /* keep vertical scrollbar */
+}
+@media (min-width: 1024px) {
+  body {
+    background-color: #ececec;
+  }
+}
+
+
+*{
+  font-family: 'poppins' !important;
+}

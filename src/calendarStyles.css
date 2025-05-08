@@ -1,0 +1,133 @@
+.react-calendar {
+    border: none;
+    font-family: Poppins, sans-serif;
+    font-size: 14px;
+    /* border:2px outset #999; */
+    border-radius: 25px;
+    /* -webkit-box-shadow: 5px 5px 15px rgba(0,0,0,0.4);
+    -moz-box-shadow: 5px 5px 15px rgba(0,0,0,0.4); */
+  }
+  
+  .react-calendar__tile {
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  .react-calendar__tile:enabled:hover,
+  .react-calendar__tile:enabled:focus {
+    background-color: #f0f0f0;
+  }
+  
+  .react-calendar__navigation button {
+    min-width: 44px;
+    background: none;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .react-calendar__tile--active {
+    background-color: #0086ad;
+    color: white;
+    border-radius: 8px;
+  }
+  
+  .react-calendar__tile--now {
+    background-color: #e6e6e6;
+  }
+
+  .react-calendar__navigation__prev2-button,.react-calendar__navigation__next2-button{
+    display: none;
+  }
+  
+  
+  .react-calendar {
+    font-family: 'Poppins', sans-serif !important;
+  }
+  
+  .react-calendar__navigation button {
+    font-family: 'Poppins', sans-serif !important;
+    color: #333;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+  }
+  
+  .react-calendar__month-view__days__day--weekend {
+    color: #d10000; /* Custom color for weekend days */
+  }
+  
+  .react-calendar__tile {
+    font-family: 'Poppins', sans-serif !important;
+    color: #333;
+    padding: 10px 6px;
+    border-radius: 8px;
+  }
+  
+  .react-calendar__tile--now {
+    background: #0086ad;
+    color: white;
+    border-radius: 8px;
+  }
+  
+  .react-calendar__tile--active {
+    background: #006c8a;
+    color: white;
+    border-radius: 8px;
+  }
+  
+  .react-calendar__tile--hover {
+    background-color: #e0f7fa;
+  }
+  
+
+  /* Remove the background color for the current month */
+.react-calendar__tile--now {
+  background-color: transparent !important;
+}
+
+/* Optional: Add a border or different style to the current month */
+.react-calendar__tile--now:enabled:hover,
+.react-calendar__tile--now:enabled:focus {
+  background-color: #f0f0f0; /* Customize hover color if needed */
+}
+
+/* You can also customize the selected month */
+.react-calendar__tile--active {
+  background-color: #0086AD !important; /* Change active color */
+  color: white !important;
+}
+
+/* Optional: Add hover styles for active month */
+.react-calendar__tile--active:hover {
+  background-color: #005f7f !important;
+}
+
+
+
+
+
+/* Remove the background color for the current month */
+.react-calendar__tile--now {
+    background-color: transparent !important;
+    color : black
+  }
+  
+  /* Optional: Add a border or different style to the current month */
+  .react-calendar__tile--now:enabled:hover,
+  .react-calendar__tile--now:enabled:focus {
+    background-color: #f0f0f0; /* Customize hover color if needed */
+  }
+  
+  /* You can also customize the selected month */
+  .react-calendar__tile--active {
+    background-color: #0086AD !important; /* Change active color */
+    color: white !important;
+  }
+  
+  /* Optional: Add hover styles for active month */
+  .react-calendar__tile--active:hover {
+    background-color: #005f7f !important;
+  }
+  

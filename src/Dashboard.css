@@ -1,0 +1,649 @@
+:root {
+  --primary: #FFFFFF;
+  --secondary: #0000FF;
+  --red: #FF0000;
+  --grey: #D5F6FF;
+  --lightgrey:#FFFFFF;
+  --black: #000000;
+  --lightblue: #0086AD;
+  --progress-bg: #EF9C00;
+  --lightyellow: #FDECCC;
+  --nav-background: #F5F5F5;
+  --nav-active: #0086AD;
+  --selected-color-bg:#fdf0d9
+}
+
+.dashboard-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  min-height: 100vh; /* Changed from height to min-height */
+  background-color: var(--primary);
+  padding-bottom: 60px;
+  box-sizing: border-box;
+  /* overflow: hidden;  */
+}
+
+.dashboard {
+  font-family: Arial, sans-serif;
+  background-color: var(--lightgrey);
+  color: var(--black);
+  width: 100%;
+  max-width: 400px;
+  /* box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 8px; */
+  margin-top: 20px;
+  padding-bottom: 60px; /* Ensure bottom padding to prevent content from being cut off */
+}
+
+.sidebar {
+  display: block;
+  /* width: 100%;  */
+  max-width: 12vw; /* Keeps a fixed maximum width */
+  background-color: white;
+  padding: 20px;
+  box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  height: 100vh; /* Ensures the sidebar fills the full height */
+  overflow-y: auto; /* Allows scrolling within the sidebar */
+  z-index: 1000; /* Keeps the sidebar on top of other content */
+}
+
+.sidebar .logo-image {
+  width: 50%;
+  height: 50%;
+  margin-bottom: 20px;
+  /* justify-content: flex-start; */
+}
+
+.sidebar .menu-items {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  cursor: pointer;
+  padding: 15px 10px 15px 10px;
+}
+
+.menu-item.active {
+  color: var(--black);
+  background-color: var(--selected-color-bg);
+  border-radius: 10px;
+}
+
+.menu-icon {
+  font-size: 22px;
+  margin-right: 10px;
+}
+
+.menu-label {
+  font-size: 16px;
+}
+
+
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  background-color: var(--primary);
+  color: var(--black);
+}
+
+.logo-image {
+  height: 40px;
+  width: auto;
+}
+
+.title {
+  font-size: 20px;
+  text-align: center;
+  flex-grow: 1;
+}
+
+.desktop-notification {
+  display: none;
+}
+
+.notification {
+  font-size: 20px;
+}
+
+.notification-icon {
+  cursor: pointer;
+}
+
+.name {
+  padding: 10px 0 0 20;
+}
+
+.content {
+  padding: 10px 15px;
+}
+
+.image-container {
+  height: 50vh;
+  width: 100%;
+  /* border-radius: 500px; */
+  /* background-color: red; */
+}
+
+.content-image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.contentImageContainer {
+  position: relative;
+  width: 100%;
+  box-sizing:border-box;
+  max-width: 600px; /* Adjust as needed */
+}
+
+.contentImage {
+  width: 100%;
+  height: 50%;
+}
+
+.progressOverlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%; /* Adjust size as needed */
+  height: 80%; /* Adjust size as needed */
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 0 0 5px #4CAF50 inset; /* Creates the border effect */
+}
+
+.centerLogo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%; /* Adjust size as needed */
+  height: auto;
+}
+
+/* Savings container styles */
+.savings-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  height: 30vh;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex: 1;
+  background-color: var(--grey);
+  margin: 5px;
+  padding: 10px;
+  border-radius: 25px;
+}
+
+.icon {
+  font-size: 28px;
+  padding: 10px;
+  background-color: var(--lightblue);
+  border-radius: 10px;
+  color: var(--primary);
+}
+
+.amount {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.description {
+  font-size: 14px;
+  color: var(--black);
+  margin-top: 5px;
+}
+
+.desktop-upcoming-payment-container,.desktop-payment-status-container,.desktop-image-box{
+  display: none;
+
+}
+
+/* Progress container styles */
+.progress-container {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: var(--lightyellow);
+  border-radius: 25px;
+  text-align: center;
+}
+
+.progress-container .icon {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.progress-text {
+  font-size: 16px;
+  color: var(--black);
+}
+
+.progress-text .bold {
+  font-weight: bold;
+}
+
+.progress-bar {
+  height: 8px;
+  width: 100%;
+  background-color: var(--primary);
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+.progress {
+  height: 100%;
+  background-color: var(--progress-bg);
+  border-radius: 4px;
+}
+
+/* Image Box */
+.image-box {
+  background: linear-gradient(90deg, #FBD080 0%, #71C7E0 100%);
+  padding-bottom: 15px;
+  border-radius: 8px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.image-box-image {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.image-box-details {
+  padding: 15px;
+  display: flex;
+  flex-direction: column; /* Ensure the content is stacked vertically */
+  align-items: center; /* Center content horizontally */
+  justify-content: center; /* Center content vertically */
+  text-align: center; /* Ensure the text is centered */
+}
+
+
+.image-box-heading {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--black);
+  margin-bottom: 10px;
+}
+
+.image-box-description {
+  font-size: 14px;
+  color: var(--black);
+  margin-top: 5px;
+}
+
+/* Title for Upcoming Payments Section */
+/* Title for Upcoming Payments Section */
+.section-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  text-align: center;  /* Center the section title */
+  color: var(--black);
+}
+
+/* Upcoming Payments Row */
+.payments-row {
+  display: flex;
+  justify-content: center; /* Center the payment columns */
+  align-items: center;  /* Align items in the center vertically */
+  margin-bottom: 20px;
+}
+
+/* Payment Column */
+.payment-column {
+  flex: 1;
+  margin: 5px;
+  padding: 10px;
+  background-color: var(--lightyellow);
+  border-radius: 8px;
+  text-align: center;  /* Center text inside each column */
+  max-width: 180px;  /* Control the maximum width to keep it centered */
+  padding-top: 50px;
+  padding-bottom: 20px;
+  border-radius: 100px 100px 10px 10px;
+}
+
+/* Row for Due Date and Payment Details */
+.row {
+  margin-bottom: 10px;
+}
+
+/* Row Title */
+.row-title {
+  font-size: 14px;
+  color: var(--black);
+  margin-bottom: 2px;
+}
+
+/* Row Value (Bold for Date and Amount) */
+.row-value {
+  font-size: 16px;
+  color: var(--black);
+}
+
+.row-value.bold {
+  font-weight: bold;
+}
+
+/* Payment Status Container */
+.payment-status-container {
+  margin-top: 20px;
+  padding: 10px;
+  background: linear-gradient(90deg, #75C7DD 0%, #FAD080 100%);
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* Payment Status Row */
+.payment-status-row {
+  display: flex;
+  justify-content: space-between;
+  /* align-items: stretch; */
+  align-items: center;
+}
+
+/* Status Column Styles */
+.status-column {
+  text-align: left;
+  flex: 1;
+}
+
+.status-title {
+  font-size: 16px;
+  color: var(--black);
+}
+
+.status-title.bold {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.status-description {
+  font-size: 14px;
+  color: var(--black);
+}
+
+/* Progress Circle Column */
+.progress-column {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.progress-circle {
+  width: 80px;
+  height: 80px;
+  background: conic-gradient(var(--progress-bg) 50%, var(--primary) 50%);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.progress-circle-text {
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--black);
+}
+
+/* Bottom Navigation Bar */
+.bottom-nav {
+  display: flex;
+  justify-content: space-around;
+  background-color: #f5f5f5;
+  padding: 10px 0;
+  box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  /* max-width: 400px; */
+  z-index: 1000;
+  margin-top: 400px; /* Add margin to avoid overlapping */
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #000;
+}
+
+.nav-item.active {
+  color: var(--nav-active);
+}
+
+.nav-icon {
+  font-size: 24px;
+  background-color: white;
+}
+
+.nav-label {
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+/* Mobile-first styles */
+@media (max-width: 700px) {
+  .topBar {
+    display: none;
+    padding: 10px 10px;
+  }
+
+  .logo {
+    font-size: 16px;
+  }
+
+  .title {
+    font-size: 18px;
+  }
+
+  .notification {
+    font-size: 18px;
+  }
+  .sidebar{
+    display: none;
+  }
+}
+
+/* Desktop styles */
+/* @media (min-width: 601px) {
+  .dashboard-wrapper {
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .dashboard {
+    margin-top: 20px;
+  }
+} */
+
+@media (min-width: 768px) {
+  .dashboard-wrapper {
+    justify-content: flex-start;
+    align-items: flex-start;
+    /* padding: 20px; */
+  }
+
+  .desktop-notification {
+    display: block;
+    position: absolute; /* Use absolute positioning */
+    top: 5px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  /* Hide the mobile notification icon */
+  .notification {
+    display: none;
+  }
+
+  .sidebar {
+    display: block;
+    position: fixed;
+  }
+
+  .dashboard {
+    max-width: 100vw;
+    margin-left: 17vw;
+    padding-bottom: 20px;
+  }
+
+  .image-saving-progress-container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .left-column {
+    /* background-color: red; */
+    width: 50%;
+    margin-right: 10px;
+    /* border-radius: 200px; */
+  }
+
+  .right-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 50%;
+  }
+  
+
+  .savings-container {
+    height: 200px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .image-box,.upcoming-payments,.payment-status-container{
+
+    display: none;
+
+  }
+
+  .column {
+    padding:25px
+  }
+
+  .desktop-upcoming-payment-container{
+    display: flex;
+    flex-direction: row;
+    height: 70vh;
+    /* background-color: red; */
+  }
+
+  /* .payment-column{
+
+  } */
+
+  .row{
+    padding-bottom: 50px;
+  }
+/* 
+  .desktop-upcoming-payments{
+    background-color:green;
+  } */
+
+  .desktop-payment-status-container{
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+  padding: 20px;
+  background: linear-gradient(90deg, #75C7DD 0%, #FAD080 100%);
+  border-radius: 8px;
+  text-align: center;
+  justify-content:space-around;
+
+  }
+
+  .desktop-image-box{
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(90deg, #FBD080 0%, #71C7E0 100%);
+  padding-bottom: 15px;
+  border-radius: 8px;
+  text-align: center;
+  margin-top: 20px;
+  height: 50vh;
+  z-index: 10000000000000000000000;
+  border-radius: 25px;
+  }
+
+  .desktop-image-box-image{
+  /* height: 25vh; */
+  object-fit: cover;
+  max-width: 100%;
+  max-height:35vh;
+  display: block;
+  border-radius: 25px 25px 0 0;
+  }
+
+
+  .progress-container{
+    padding:25px
+  }
+  /* .status-title{
+    padding-bottom: 20px;
+  } */
+
+  /* .progress-text {
+    font-size: 25px;
+    color: var(--black);
+  } */
+
+  /* .amount ,.description {
+    font-size: 25px;
+  } */
+
+  .bottom-nav {
+    display: none;
+  }
+
+  .topBar {
+    display: none;
+  }
+}
+
+
+/* Dashboard.css */
+/* Dashboard.css */
+.dashboard-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f9f9f9;
+  /* padding: 8px; */
+}
+
+
